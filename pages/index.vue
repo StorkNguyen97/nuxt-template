@@ -2,34 +2,29 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        nuxt-template
-      </h1>
-      <h2 class="subtitle">
-        Template Project Client Side
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <h1 class="title">nuxt-template</h1>
+      <h2 class="subtitle">Template Project Client Side</h2>
+      <div>{{ $t('hello') }}</div>
     </div>
   </div>
 </template>
-
 <script>
+import { mapActions, mapState } from 'vuex'
 import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
+  components: { Logo },
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapState({})
+  },
+  mounted() {
+    this.$nextTick(function() {})
+  },
+  methods: {
+    ...mapActions({})
   }
 }
 </script>

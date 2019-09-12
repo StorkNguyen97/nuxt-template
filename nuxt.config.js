@@ -27,7 +27,19 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/antd-ui'],
+  plugins: [
+    '@/plugins/antd-ui',
+    '@/plugins/index',
+    '@/plugins/axios',
+    '@/plugins/i18n',
+    '@/plugins/validate',
+    '@/plugins/author'
+  ],
+
+  router: {
+    middleware: ['lang', 'author']
+  },
+
   /*
    ** Nuxt.js dev-modules
    */
@@ -38,7 +50,14 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/axios'],
+  /*
+   ** Axios module configuration
+   */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: ''
+  },
   /*
    ** Build configuration
    */
